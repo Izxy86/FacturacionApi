@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "49bde448-971c-47e7-a092-a858da02c47a",
+		"name": "MartínGamboggi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22100601"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "getCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/getCliente/2",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"getCliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "traerClientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/traerClientes",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"traerClientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "guardarCliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"Julio\",\r\n    \"apellido\": \"Iglesias\",\r\n    \"dni\":\"123478321\",\r\n    \"direccion\":\"diagonal sur\",\r\n    \"email\":\"Jiglesias@gmasdiojs.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "LocalHost:8080/postCliente",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"postCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 7,\r\n        \"nombre\": \"Julio\",\r\n        \"apellido\": \"Iglesias\",\r\n        \"dni\": \"123478321\",\r\n        \"direccion\": \"diagonal sur\",\r\n        \"email\": \"julioIglesias@hotmail.com\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "LocalHost:8080/editarCliente",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"editarCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrarCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/borrarCliente/7",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"borrarCliente",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "getempresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/getEmpresa/1",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"getEmpresa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "guardarEmpresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Mercado Libre\",\r\n    \"rubro\": \"Ventas Online\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "LocalHost:8080/postEmpresa",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"postEmpresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarEmpresa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \r\n    \"id\": 2,\r\n    \"nombre\": \"Mercado Libre\",\r\n    \"rubro\": \"distribuidora\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "LocalHost:8080/editarEmpresa",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"editarEmpresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrarEmpresa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/borrarEmpresa/2",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"borrarEmpresa",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Producto",
+			"item": [
+				{
+					"name": "getProducto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/getProducto/1",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"getProducto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listaProductos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/traerProductos",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"traerProductos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "guardarProducto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"Dulce de Leche Punta de Agua\",\r\n        \"descripcion\": \"Producto Lacteo a base de azúcares y colorantes\",\r\n        \"precio\": 200,\r\n        \"cantidad_en_Stock\": 500\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "LocalHost:8080/postProducto",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"postProducto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarProducto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"nombre\": \"Dulce de Leche Punta de Agua\",\r\n    \"descripcion\": \"Producto Lacteo a base de azúcares y colorantes\",\r\n    \"precio\": 200,\r\n    \"cantidad_en_Stock\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "LocalHost:8080/editarProducto",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"editarProducto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrarProducto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/borrarProducto/11",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"borrarProducto",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "restarStock",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 11,\r\n    \"restarStock\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "LocalHost:8080/restarStock?11=1",
+							"host": [
+								"LocalHost"
+							],
+							"port": "8080",
+							"path": [
+								"restarStock"
+							],
+							"query": [
+								{
+									"key": "11",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
