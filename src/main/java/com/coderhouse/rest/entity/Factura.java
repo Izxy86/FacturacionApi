@@ -8,24 +8,22 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Table(name = "factura")
 @Data
-@Table(name = " factura")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Factura {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @Column (name = "id")
     private Long id;
-    @Column (name = "fecha")
-    private Date fecha;
-    @Column (name = "tipoFactura")
-    private String tipoFactura;
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
 
-    @JoinColumn(name = "empresa_id")
-    private Empresa empresa;
-    @ManyToOne
-    @JoinColumn(name = "detalle_factura_ID")
-    private DetalleFactura detalleFactura;
+    @Column(name="fecha")
+    private Date fecha;
+
+    @Column(name="tipoFactura")
+    private String tipofactura;
+
+    @Column(name="total")
+    private int total;
 }

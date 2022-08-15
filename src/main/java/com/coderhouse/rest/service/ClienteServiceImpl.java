@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -31,6 +32,18 @@ public class ClienteServiceImpl implements ClienteService {
         ClienteDto clienteDto = new ClienteDto();
         clienteDto.setNombre(clienteAObtener.getNombre());
         return clienteDto;
+    }
+
+    public Cliente getClienteByDni(Cliente cliente){
+        Optional<Cliente> buscarCliente= clienteRepository.findByDni(cliente.getDni());
+        if (buscarCliente.isPresent())
+        {
+            log.info("Ya existe Cliente");
+            return buscarCliente.get();
+        }else{
+            log.info("Se guardó un nuevo Cliente");
+            return clienteRepository.save(cliente);
+        }
     }
 
     public Cliente guardarClienteEnLaBaseDeDatos(Cliente cliente){

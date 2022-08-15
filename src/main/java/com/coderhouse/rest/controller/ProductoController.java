@@ -6,6 +6,7 @@ import com.coderhouse.rest.repository.ProductoRepository;
 import com.coderhouse.rest.service.ProductoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class ProductoController {
     }
 
     @PostMapping("/postProducto")
-    public Producto guardarProducto(@RequestBody Producto producto){
+    public Producto guardarProducto(@Validated @RequestBody Producto producto){
         return productoServiceImpl.guardarProductoEnLaBaseDeDatos(producto);
     }
 
@@ -50,6 +51,12 @@ public class ProductoController {
         }
         return productoDto;
     }
+
+    @PutMapping("/restarStockList")
+    public List<Producto> restarStockList(@RequestBody List<Producto> productos){
+        return productoServiceImpl.restarStockList(productos);
+    }
+
 
 
     @DeleteMapping("/borrarProducto/{id}")

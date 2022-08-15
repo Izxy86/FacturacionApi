@@ -5,6 +5,7 @@ import com.coderhouse.rest.entity.Empresa;
 import com.coderhouse.rest.repository.EmpresaRepository;
 import com.coderhouse.rest.service.EmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,7 +24,7 @@ public class EmpresaController {
     public EmpresaDto getEmpresaDto(@PathVariable(value="id")Long id){return empresaServiceImpl.getEmpresaDto(id);}
 
     @PostMapping("/postEmpresa")
-    public Empresa guardarEmpresa(@RequestBody Empresa empresa){
+    public Empresa guardarEmpresa(@Validated @RequestBody Empresa empresa){
         return empresaServiceImpl.guardarEmpresaEnLaBaseDeDatos(empresa);
     }
 

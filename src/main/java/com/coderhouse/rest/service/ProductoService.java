@@ -19,7 +19,8 @@ public interface ProductoService {
 
     List<Producto> traerProductos();
 
-    ProductoDto restarStock(ProductoDto productoDto);
+
+    List<Producto> restarStockList(List<Producto> productosList);
 
 
 

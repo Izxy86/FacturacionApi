@@ -4,24 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.List;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "detalle_factura")
+@Table(name = "detalleFactura")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class DetalleFactura {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @Column (name = "id")
     private Long id;
-
-    private List<Producto> Productos;
-
-
-
 }

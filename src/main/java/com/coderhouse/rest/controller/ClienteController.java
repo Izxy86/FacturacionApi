@@ -5,6 +5,7 @@ import com.coderhouse.rest.entity.Cliente;
 import com.coderhouse.rest.repository.ClienteRepository;
 import com.coderhouse.rest.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,7 +38,7 @@ public class ClienteController {
 
 
     @PostMapping("/postCliente")
-    public Cliente guardarCliente(@RequestBody Cliente cliente) {
+    public Cliente guardarCliente(@Validated @RequestBody Cliente cliente) {
         return clienteServiceImpl.guardarClienteEnLaBaseDeDatos(cliente);
     }
 

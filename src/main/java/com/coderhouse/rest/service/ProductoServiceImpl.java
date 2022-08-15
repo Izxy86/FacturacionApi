@@ -2,13 +2,13 @@ package com.coderhouse.rest.service;
 
 import com.coderhouse.rest.dto.ProductoDto;
 import com.coderhouse.rest.entity.Producto;
+import com.coderhouse.rest.exception.DbException;
 import com.coderhouse.rest.repository.ProductoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @Slf4j
@@ -27,8 +27,26 @@ public class ProductoServiceImpl implements ProductoService{
         return productoRepository.findAll();
     }
 
-    public ProductoDto restarStock(ProductoDto productoDto) {
-        return null;
+
+
+
+
+    public List<Producto> restarStockList(List<Producto> productosList) {
+        for (Producto producto : productosList) {
+            Producto productoEnBusqueda = getProducto(producto.getId());
+            int resta = productoEnBusqueda.getCantidad_en_Stock()-producto.getCantidad_en_Stock();
+            if (resta > 0){
+                productoEnBusqueda.setCantidad_en_Stock(resta);
+            }
+            else{
+                throw new DbException("No hay mas productos de : "+ producto.getCantidad_en_Stock());
+            }
+
+        }
+        productoRepository.saveAll(productosList);
+
+
+        return productosList;
     }
 
 

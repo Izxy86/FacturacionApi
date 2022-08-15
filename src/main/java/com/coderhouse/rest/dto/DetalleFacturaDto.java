@@ -1,6 +1,7 @@
 package com.coderhouse.rest.dto;
 
 
+import com.coderhouse.rest.entity.Cliente;
 import com.coderhouse.rest.entity.Producto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DetalleFacturaDto {
+    ClienteDto clienteDto;
 
-    private List<Producto> productosList;
+    List<ProductoDto> productosDtoList;
 }

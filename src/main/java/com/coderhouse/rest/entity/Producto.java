@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "productos")
@@ -17,17 +18,22 @@ public class Producto {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column (name = "id")
+    @NotBlank
     private Long id;
 
     @Column (name = "nombre")
+    @NotBlank
     private String nombre;
 
     @Column (name = "descripcion")
+    @NotBlank
     private String descripcion;
 
     @Column (name = "precio")
+    @NotBlank
     private int precio;
 
     @Column (name = "Cantidad_en_Stock")
+    @NotBlank
     private int Cantidad_en_Stock;
 }
