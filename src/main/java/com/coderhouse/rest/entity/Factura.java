@@ -16,6 +16,8 @@ public class Factura {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column (name = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DetalleFactura_id",referencedColumnName = "id")
     private Long id;
 
     @Column(name="fecha")

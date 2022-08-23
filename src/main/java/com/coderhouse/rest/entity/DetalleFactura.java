@@ -15,5 +15,6 @@ public class DetalleFactura {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column (name = "id")
+    @OneToOne(cascade = CascadeType.ALL)
     private Long id;
 }

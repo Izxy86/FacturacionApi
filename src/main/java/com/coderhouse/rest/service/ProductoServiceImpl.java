@@ -1,6 +1,5 @@
 package com.coderhouse.rest.service;
 
-import com.coderhouse.rest.dto.ProductoDto;
 import com.coderhouse.rest.entity.Producto;
 import com.coderhouse.rest.exception.DbException;
 import com.coderhouse.rest.repository.ProductoRepository;
@@ -62,6 +61,8 @@ public class ProductoServiceImpl implements ProductoService{
         productoModificado.setNombre(producto.getNombre());
         return productoRepository.save(producto);
     }
+
+
 
     public String borrarProducto(Long id) {
         Producto producto = productoRepository.findById(id).get();
