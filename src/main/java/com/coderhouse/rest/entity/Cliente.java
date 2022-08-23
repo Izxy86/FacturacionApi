@@ -17,7 +17,6 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    @NotBlank
     private Long id;
 
     @Column(name = "nombre")

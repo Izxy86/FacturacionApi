@@ -18,7 +18,6 @@ public class Producto {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     @Column (name = "id")
-    @NotBlank
     private Long id;
 
     @Column (name = "nombre")
@@ -34,6 +33,5 @@ public class Producto {
     private int precio;
 
     @Column (name = "Cantidad_en_Stock")
-    @NotBlank
     private int Cantidad_en_Stock;
 }
