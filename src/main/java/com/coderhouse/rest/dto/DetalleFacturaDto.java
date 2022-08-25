@@ -13,7 +13,6 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DetalleFacturaDto {
-    ClienteDto clienteDto;
 
     List<ProductoDto> productosDtoList;
 }

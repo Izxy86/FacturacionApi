@@ -3,6 +3,7 @@ package com.coderhouse.rest.service;
 
 import com.coderhouse.rest.dto.ProductoDto;
 import com.coderhouse.rest.entity.Producto;
+import com.coderhouse.rest.exception.DbException;
 
 import java.util.List;
 
@@ -20,7 +21,8 @@ public interface ProductoService {
     List<Producto> traerProductos();
 
 
-    List<Producto> restarStockList(List<Producto> productosList);
+    public List<Producto> restarStockList(List<Producto> productosList);
+
 
 
 

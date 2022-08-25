@@ -1,5 +1,6 @@
 package com.coderhouse.rest.entity;
 
+import com.coderhouse.rest.dto.DetalleFacturaDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,4 +29,6 @@ public class Factura {
 
     @Column(name="total")
     private int total;
+
+
 }

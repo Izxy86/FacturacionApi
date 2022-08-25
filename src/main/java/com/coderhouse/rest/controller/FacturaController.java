@@ -3,7 +3,6 @@ package com.coderhouse.rest.controller;
 import com.coderhouse.rest.entity.Factura;
 import com.coderhouse.rest.repository.FacturaRepository;
 import com.coderhouse.rest.service.FacturaService;
-import com.coderhouse.rest.service.FacturaServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -17,9 +16,6 @@ public class FacturaController {
 
     @Autowired
     FacturaService facturaServiceImpl;
-
-    @Autowired
-    FacturaRepository facturaRepository;
 
     @GetMapping("/getFactura/{id}")
     public Factura getFactura(@PathVariable(value="id")Long id){
