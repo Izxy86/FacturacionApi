@@ -3,25 +3,28 @@ package com.coderhouse.rest.service;
 
 import com.coderhouse.rest.dto.ProductoDto;
 import com.coderhouse.rest.entity.Producto;
-import com.coderhouse.rest.exception.DbException;
 
 import java.util.List;
 
 
 public interface ProductoService {
 
-    Producto getProducto(Long id);
+    com.coderhouse.rest.entity.Producto getProducto(Long id);
 
-    Producto guardarProductoEnLaBaseDeDatos(Producto producto);
+    com.coderhouse.rest.entity.Producto guardarProductoEnLaBaseDeDatos(com.coderhouse.rest.entity.Producto producto);
 
-    Producto modificarProductoEnLaBaseDeDatos(Producto producto);
+    com.coderhouse.rest.entity.Producto modificarProductoEnLaBaseDeDatos(com.coderhouse.rest.entity.Producto producto);
 
     String borrarProducto(Long id);
 
-    List<Producto> traerProductos();
+    List<com.coderhouse.rest.entity.Producto> traerProductos();
 
+    ProductoDto getProductoDto(Long id);
 
-    public List<Producto> restarStockList(List<Producto> productosList);
+    Producto modificarStockProducto(Producto producto);
+
+    Producto restarStockBaseDeDatos(Long id, int cantADescontar);
+
 
 
 

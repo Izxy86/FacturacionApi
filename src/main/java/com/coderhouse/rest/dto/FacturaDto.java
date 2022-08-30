@@ -10,9 +10,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FacturaDto {
-    private Date fecha;
     private String tipoFactura;
     private int total;
-    DetalleFacturaDto detalleFacturaDto;
     EmpresaDto empresaDto;
+    ClienteDto clienteDto;
+
 }

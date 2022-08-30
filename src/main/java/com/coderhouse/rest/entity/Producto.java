@@ -21,15 +21,14 @@ public class Producto {
     private Long id;
 
     @Column (name = "nombre")
-    @NotBlank
+
     private String nombre;
 
     @Column (name = "descripcion")
-    @NotBlank
+
     private String descripcion;
 
     @Column (name = "precio")
-    @NotBlank
     private int precio;
 
     @Column (name = "Cantidad_en_Stock")

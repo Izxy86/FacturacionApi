@@ -19,4 +19,6 @@ public interface ClienteService {
 
     String borrarCliente(Long id);
 
+    Cliente getClienteByDni(Cliente cliente);
+
 }

@@ -9,7 +9,7 @@ CREATE TABLE CLIENTE (id bigint NOT NULL auto_increment, nombre varchar(150) not
 insert into CLIENTE (nombre, apellido, dni, direccion, email) values
 
 ('Andres','Zamorano','30.654.798','Calle falsa 123','aZamorano@gmail.com'),
-('Alejandra', 'López', '33.019.497','Calllao 820','aleLopez@hotmail.com'),
+('Mariela', 'Reynoso', '33.019.497','Calllao 820','mary@hotmail.com'),
 ('Maximiliano', ' Garoglio', '32.467.123','CuchaCucha 324', 'MaxiG@gmail.com'),
 ('Andrea', 'Aphalo','33.198.467','Cangallo 90','andyA@gmail.com'),
 ('Luna', 'Chen','93.467.888','China 15','lunaChen@hotmail.com');

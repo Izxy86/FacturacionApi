@@ -80,7 +80,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n        \"id\": 7,\r\n        \"nombre\": \"Julio\",\r\n        \"apellido\": \"Iglesias\",\r\n        \"dni\": \"123478321\",\r\n        \"direccion\": \"diagonal sur\",\r\n        \"email\": \"julioIglesias@hotmail.com\"\r\n }",
+							"raw": " {\r\n        \"id\": 6,\r\n        \"nombre\": \"Julio\",\r\n        \"apellido\": \"Iglesias\",\r\n        \"dni\": \"123478321\",\r\n        \"direccion\": \"diagonal sur\",\r\n        \"email\": \"julioIglesias@hotmail.com\"\r\n }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -330,15 +330,20 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Compra",
+			"item": [
 				{
-					"name": "restarStock",
+					"name": "GuardarFactura",
 					"request": {
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 11,\r\n    \"restarStock\": 4\r\n}",
+							"raw": "{\r\n    \"clienteDto\":{\r\n        \"id\": 2,\r\n        \"nombre\": \"Mariela\",\r\n        \"dni:\":\"33.019.497\"\r\n\r\n    },\r\n    \"productoDtoList\":[\r\n        {\r\n            \"id\": 1,\r\n            \"cantidadARestar\": 0\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"cantidadARestar\": 4\r\n\r\n        },\r\n        {\r\n            \"id\":3,\r\n            \"cantidadARestar\":9\r\n\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -346,19 +351,31 @@
 							}
 						},
 						"url": {
-							"raw": "LocalHost:8080/restarStock?11=1",
+							"raw": "LocalHost:8080/postFactura",
 							"host": [
 								"LocalHost"
 							],
 							"port": "8080",
 							"path": [
-								"restarStock"
+								"postFactura"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFacturas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "LocalHost:8080/traerFacturas",
+							"host": [
+								"LocalHost"
 							],
-							"query": [
-								{
-									"key": "11",
-									"value": "1"
-								}
+							"port": "8080",
+							"path": [
+								"traerFacturas"
 							]
 						}
 					},

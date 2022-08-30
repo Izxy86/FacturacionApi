@@ -9,14 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ClienteDto {
 
-    private String nombre;
+     Long id;
 
-    private String apellido;
+     String nombre;
 
-    private String dni;
-
-    private String direccion;
-
-    private String email;
-
+     String dni;
 }

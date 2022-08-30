@@ -24,7 +24,7 @@ public class Cliente {
     private String nombre;
 
     @Column (name = "apellido")
-    @NotBlank
+
     private String apellido;
 
     @Column(name= "dni")

@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class ProductoDto  {
+public class ProductoDto {
     Long id;
     String nombre;
-    int restarStock;
+    int cantidadARestar;
 }

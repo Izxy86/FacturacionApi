@@ -1,5 +1,6 @@
 package com.coderhouse.rest.service;
 
+import com.coderhouse.rest.entity.DetalleFactura;
 import com.coderhouse.rest.entity.Factura;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface FacturaService {
     Factura guardarFacturaEnLaBaseDeDatos(Factura factura);
 
     List<Factura> traerFacturas();
+
+    Factura agregarDetalle (DetalleFactura detalleFactura);
 }

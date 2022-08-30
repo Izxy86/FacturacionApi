@@ -1,5 +1,6 @@
 package com.coderhouse.rest.controller;
 
+import com.coderhouse.rest.dto.CompraDto;
 import com.coderhouse.rest.dto.ProductoDto;
 import com.coderhouse.rest.entity.Producto;
 import com.coderhouse.rest.repository.ProductoRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -39,24 +41,11 @@ public class ProductoController {
     public Producto modificarProducto(@RequestBody Producto producto){
         return productoServiceImpl.modificarProductoEnLaBaseDeDatos(producto);
     }
+
     @PutMapping("/restarStock")
-    public ProductoDto restarStock(@RequestBody ProductoDto productoDto){
-        long productoid= productoDto.getId();
-        int productoARestar= productoDto.getRestarStock();
-        if (productoServiceImpl.getProducto(productoid).getCantidad_en_Stock()< productoARestar){
-            log.info("Stock insuficiente"+productoServiceImpl.getProducto(productoid).getCantidad_en_Stock());
-        } else{
-            productoDto.setRestarStock(productoARestar);
-
-        }
-        return productoDto;
+    public Producto restarStock(@RequestBody ProductoDto productoDto){
+        return productoServiceImpl.restarStockBaseDeDatos(productoDto.getId(), productoDto.getCantidadARestar());
     }
-
-    @PutMapping("/restarStockList")
-    public List<Producto> restarStockList(@RequestBody List<Producto> productos){
-        return productoServiceImpl.restarStockList(productos);
-    }
-
 
 
     @DeleteMapping("/borrarProducto/{id}")
