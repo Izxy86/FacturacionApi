@@ -2,6 +2,7 @@ package com.coderhouse.rest.service;
 
 import com.coderhouse.rest.dto.ClienteDto;
 import com.coderhouse.rest.entity.Cliente;
+import com.coderhouse.rest.exception.DbException;
 
 import java.util.List;
 
@@ -11,7 +12,6 @@ public interface ClienteService {
 
     List<Cliente> traerClientes();
 
-    ClienteDto getClienteDto(Long id);
 
     Cliente guardarClienteEnLaBaseDeDatos(Cliente cliente);
 
@@ -19,7 +19,7 @@ public interface ClienteService {
 
     String borrarCliente(Long id);
 
-    Cliente getClienteByDni(Cliente cliente);
+
 
 
 

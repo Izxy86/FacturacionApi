@@ -2,6 +2,7 @@ package com.coderhouse.rest.service;
 
 import com.coderhouse.rest.dto.ClienteDto;
 import com.coderhouse.rest.entity.Cliente;
+import com.coderhouse.rest.exception.DbException;
 import com.coderhouse.rest.repository.ClienteRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,32 +20,17 @@ public class ClienteServiceImpl implements ClienteService {
 
     public Cliente getCliente(Long id) {
 
-        Cliente clienteAObtener = clienteRepository.findById(id).orElseThrow(RuntimeException::new);
-        return clienteAObtener;
-    }
+        Cliente clienteAObtener = clienteRepository.findById(id).orElseThrow(() -> new DbException("No existe el cliente de Id " + id +"Cree un Put nuevo en la carpeta Cliente con los Datos correspondientes"));
+       return clienteAObtener;
+        }
+
+
 
     public List<Cliente> traerClientes() {
         return clienteRepository.findAll();
     }
 
-    public ClienteDto getClienteDto(Long id) {
-        Cliente clienteAObtener = clienteRepository.findById(id).orElseThrow(RuntimeException::new);
-        ClienteDto clienteDto = new ClienteDto();
-        clienteDto.setNombre(clienteAObtener.getNombre());
-        return clienteDto;
-    }
 
-    public Cliente getClienteByDni(Cliente cliente){
-        Optional<Cliente> buscarCliente= clienteRepository.findByDni(cliente.getDni());
-        if (buscarCliente.isPresent())
-        {
-            log.info("Ya existe Cliente");
-            return getCliente(cliente.getId());
-        }else{
-            log.info("Se guardó un nuevo Cliente");
-            return clienteRepository.save(cliente);
-        }
-    }
 
     public Cliente guardarClienteEnLaBaseDeDatos(Cliente cliente){
         return clienteRepository.save(cliente);

@@ -10,8 +10,9 @@ import lombok.NoArgsConstructor;
 public class ClienteDto {
 
      Long id;
-
      String nombre;
+
+     String apellido;
 
      String dni;
 }

@@ -2,17 +2,17 @@ CREATE TABLE EMPRESA (id bigint NOT NULL auto_increment, nombre varchar(150), ru
 
 insert into EMPRESA(nombre,rubro) values ('ReDragon','Insumos informáticos');
 
-CREATE TABLE CLIENTE (id bigint NOT NULL auto_increment, nombre varchar(150) not null, apellido varchar (150) not null,
-                        dni varchar(150) not null, direccion varchar(150) not null, email varchar(150) not null, primary key (id));
+CREATE TABLE CLIENTE (id bigint Not Null auto_increment, nombre varchar(150) not null, apellido varchar (150) not null,
+                        dni varchar(150) not null, direccion varchar(150) , email varchar(150) , primary key (id));
 
 
 insert into CLIENTE (nombre, apellido, dni, direccion, email) values
 
-('Andres','Zamorano','30.654.798','Calle falsa 123','aZamorano@gmail.com'),
-('Mariela', 'Reynoso', '33.019.497','Calllao 820','mary@hotmail.com'),
-('Maximiliano', ' Garoglio', '32.467.123','CuchaCucha 324', 'MaxiG@gmail.com'),
-('Andrea', 'Aphalo','33.198.467','Cangallo 90','andyA@gmail.com'),
-('Luna', 'Chen','93.467.888','China 15','lunaChen@hotmail.com');
+('Andres','Zamorano','30654798','Calle falsa 123','aZamorano@gmail.com'),
+('Mariela', 'Reynoso', '33019497','Calllao 820','mary@hotmail.com'),
+('Maximiliano', ' Garoglio', '32467123','CuchaCucha 324', 'MaxiG@gmail.com'),
+('Andrea', 'Aphalo','33198467','Cangallo 90','andyA@gmail.com'),
+('Luna', 'Chen','93467888','China 15','lunaChen@hotmail.com');
 
 
 CREATE TABLE PRODUCTOS (id bigint not null auto_increment, nombre varchar(150) not null, descripcion varchar(150) not null,

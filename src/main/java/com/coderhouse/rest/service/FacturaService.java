@@ -18,6 +18,8 @@ public interface FacturaService {
 
    Factura saveFactura(Factura factura);
 
+    List<Factura> facturasCliente(Long idCliente);
+
 
 
 }

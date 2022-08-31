@@ -6,6 +6,7 @@ import com.coderhouse.rest.entity.Cliente;
 import com.coderhouse.rest.entity.DetalleFactura;
 import com.coderhouse.rest.entity.Factura;
 import com.coderhouse.rest.entity.Producto;
+import com.coderhouse.rest.exception.DbException;
 import com.coderhouse.rest.repository.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -65,7 +67,6 @@ public class FacturaServiceImpl implements FacturaService {
     public Factura nuevaCompra(CompraDto compraDto){
         Factura factura= new Factura();
         Cliente cliente= clienteService.getCliente(compraDto.getClienteDto().getId());
-        clienteService.getClienteByDni(cliente);
         factura.setCliente(cliente);
 
         List<DetalleFactura> detalleFacturaList= new ArrayList<>();
@@ -93,13 +94,35 @@ public class FacturaServiceImpl implements FacturaService {
 
 
         factura.setEmpresa(empresaService.getEmpresa(1L));
-        factura.setCliente(clienteService.getCliente(cliente.getId()));
-
+        factura.setCliente(clienteService.getCliente(compraDto.getClienteDto().getId()));
         facturaRepository.save(factura);
 
         return factura;
 
     }
+
+    public List<Factura> facturasCliente(Long idCliente){
+        List<Factura>facturaList = new ArrayList<>();
+        List<Factura>facturaClienteList= new ArrayList<>();
+        for (Factura factura : facturaRepository.findAll()) {
+            facturaList.add(factura);
+        }
+        facturaRepository.saveAll(facturaList);
+        for (Factura factura : facturaList) {
+            if(factura.getCliente().getId() == idCliente){
+                guardarFacturaEnLaBaseDeDatos(factura);
+                facturaClienteList.add(factura);
+            }
+            else{
+                throw new DbException("El Cliente {idCliente} no tiene  facturas");
+            }
+
+        }
+        facturaRepository.saveAll(facturaClienteList);
+        return facturaClienteList;
+
+    }
+
 
 
 

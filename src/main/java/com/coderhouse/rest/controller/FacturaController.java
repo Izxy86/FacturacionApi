@@ -20,9 +20,6 @@ public class FacturaController {
     @Autowired
     FacturaService facturaServiceImpl;
 
-    @Autowired
-    DetalleFacturaService detalleFacturaServiceImpl;
-
     @GetMapping("/getFactura/{id}")
     public Factura getFactura(@PathVariable(value="id")Long id){
         return facturaServiceImpl.getFactura(id);
@@ -34,6 +31,9 @@ public class FacturaController {
 
     @PutMapping("/nuevaCompra")
     public Factura nuevaCompra(@RequestBody CompraDto compraDto){return facturaServiceImpl.nuevaCompra(compraDto);}
+
+    @GetMapping("/facturaPorCliente/{id}")
+    public List<Factura> facturasPorCliente(@PathVariable(value = "id")Long id){return facturaServiceImpl.facturasCliente(id);}
 
 
 

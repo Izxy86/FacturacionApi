@@ -31,11 +31,6 @@ public class ClienteController {
     }
 
 
-    @GetMapping("/getClienteDto/{id}")
-    public ClienteDto getClienteDto(@PathVariable(value = "id") Long id) {
-        return clienteServiceImpl.getClienteDto(id);
-    }
-
 
     @PostMapping("/postCliente")
     public Cliente guardarCliente(@Validated @RequestBody Cliente cliente) {
