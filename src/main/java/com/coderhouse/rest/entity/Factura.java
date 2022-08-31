@@ -33,12 +33,15 @@ public class Factura {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    @JsonBackReference
     Cliente cliente;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "detalleFactura")
-     private List<DetalleFactura> detalleFactura;
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "detalleFacturaList")
+    List <DetalleFactura> detalleFactura;
+
+    @ManyToOne
+    @JoinColumn(name = "empresa_id")
+    Empresa empresa;
 
 
 

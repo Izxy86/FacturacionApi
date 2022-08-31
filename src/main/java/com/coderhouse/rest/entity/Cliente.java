@@ -20,7 +20,7 @@ public class Cliente {
     private Long id;
 
     @Column(name = "nombre")
-    @NotBlank
+
     private String nombre;
 
     @Column (name = "apellido")
@@ -28,7 +28,7 @@ public class Cliente {
     private String apellido;
 
     @Column(name= "dni")
-    @NotBlank
+
     private String dni;
 
     @Column (name= "direccion")

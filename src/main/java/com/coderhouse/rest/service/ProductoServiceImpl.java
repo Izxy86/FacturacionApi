@@ -21,7 +21,7 @@ public class ProductoServiceImpl implements ProductoService {
 
 
     public Producto getProducto(Long id) {
-        com.coderhouse.rest.entity.Producto productoAObtener = productoRepository.findById(id).orElseThrow(RuntimeException::new);
+        Producto productoAObtener = productoRepository.findById(id).orElseThrow(RuntimeException::new);
         return productoAObtener;
     }
 
@@ -38,7 +38,7 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
 
-    public Producto guardarProductoEnLaBaseDeDatos(com.coderhouse.rest.entity.Producto producto) {
+    public Producto guardarProductoEnLaBaseDeDatos(Producto producto) {
         return productoRepository.save(producto);
     }
 

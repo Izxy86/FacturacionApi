@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -28,19 +29,21 @@ public class DetalleFacturaServiceImpl implements DetalleFacturaService {
     ProductoService productoService;
 
     @Autowired
-    EmpresaService empresaService;
-
-    @Autowired
-    FacturaService facturaService;
-
-    @Autowired
     DetalleFacturaRepository detalleFacturaRepository;
 
-    @Autowired
-    FacturaRepository facturaRepository;
+    public DetalleFactura agregarProductos( ProductoDto productoDto){
+        DetalleFactura detalleFactura= new DetalleFactura();
+        Producto producto= productoService.getProducto(productoDto.getId());
+        detalleFactura.setNombre(producto.getNombre());
+        detalleFactura.setPrecioUnitario(producto.getPrecio());
+        detalleFactura.setCantidad(productoDto.getCantidadARestar());
+        detalleFactura.setDescripcion(producto.getDescripcion());
+        detalleFactura.setSubtotal(detalleFactura.getCantidad() * producto.getPrecio());
 
-    @Autowired
-    ProductoRepository productoRepository;
+        return detalleFactura;
+    }
+
+
 
 
 }

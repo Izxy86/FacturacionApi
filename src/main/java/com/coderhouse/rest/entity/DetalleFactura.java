@@ -19,10 +19,17 @@ public class DetalleFactura {
     @Column(name = "id")
     private Long id;
 
+   @Column(name = "nombre")
+   private String nombre;
 
-    @ManyToOne(cascade = {CascadeType.MERGE})
+    @Column(name = "precio_unitario")
+    private int precioUnitario;
 
-    Producto producto;
+    @Column(name = "descripcion")
+    private String descripcion;
+
+    @Column(name = "cantidadDelProducto")
+    private int cantidad;
 
     @Column(name = "subtotal")
     private int subtotal;

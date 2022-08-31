@@ -31,9 +31,10 @@ public class FacturaController {
     @GetMapping("/traerFacturas")
     public List<Factura> getFacturas(){return facturaServiceImpl.traerFacturas();}
 
-    @PutMapping ("/postFactura")
-    public Factura guardarFactura(@Validated @RequestBody CompraDto compraDto){
-        return detalleFacturaServiceImpl.nuevaCompra(compraDto);
-    }
+
+    @PutMapping("/nuevaCompra")
+    public Factura nuevaCompra(@RequestBody CompraDto compraDto){return facturaServiceImpl.nuevaCompra(compraDto);}
+
+
 
 }

@@ -39,7 +39,7 @@ public class ClienteServiceImpl implements ClienteService {
         if (buscarCliente.isPresent())
         {
             log.info("Ya existe Cliente");
-            return buscarCliente.get();
+            return getCliente(cliente.getId());
         }else{
             log.info("Se guardó un nuevo Cliente");
             return clienteRepository.save(cliente);
